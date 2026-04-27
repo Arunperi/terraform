@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "devops_s3_31437" {
 }
 
 resource "aws_s3_bucket_public_access_block" "public_access" {
-    bucket = aws_s3_bucket.devops_s3_31853.id
+    bucket = aws_s3_bucket.devops_s3_31437.id
     block_public_acls = false
     block_public_policy = false
     ignore_public_acls = false
@@ -25,6 +25,6 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 
 resource "aws_s3_bucket_acl" "public_acl" {
     depends_on = [ aws_s3_bucket_public_access_block.public_access ]
-    bucket = aws_s3_bucket.devops_s3_31853.id
+    bucket = aws_s3_bucket.devops_s3_31437.id
     acl = "public-read"
 }
